@@ -19,9 +19,20 @@ namespace PedraPapelTesoura.Models
             Pontuacao = 0;
         }
 
-        public void Escolhrer(String escolha)
+        public void Escolher(String escolha)
         {
             Sorteio = escolha;
+        }
+
+        public int Pontuar()
+        {
+            Pontuacao += 1;
+            return Pontuacao;
+        }
+
+        public void ResetarPontuacao()
+        {
+            Pontuacao = 0;
         }
 
         public void Jogar()
@@ -30,17 +41,17 @@ namespace PedraPapelTesoura.Models
             temp = rnd.Next(3);
             if (temp == 1)
             {
-                Sorteio = "Pedra";
+                Sorteio = "pedra";
             }
             else if (temp == 2)
             {
-                Sorteio = "Papel";
+                Sorteio = "papel";
             }
             else
             {
-                Sorteio = "Tesoura";
+                Sorteio = "tesoura";
             }
-            this.Escolhrer(Sorteio);
+            this.Escolher(Sorteio);
         }
     }
 }

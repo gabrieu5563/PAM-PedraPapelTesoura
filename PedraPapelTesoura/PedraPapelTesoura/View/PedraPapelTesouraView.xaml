@@ -3,14 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PedraPapelTesoura.View.PedraPapelTesoura">
     <VerticalStackLayout>
-        
-        <Image Source="{Binding ImagemJogador}"
-               HeightRequest="100"/>
-        
-        <Image Source="{Binding ImagemOponente}"
-               HeightRequest="100"/>
 
-        <Label Text="{Binding Resultado}"/>
+        <HorizontalStackLayout
+            HorizontalOptions="Center"
+            Spacing="100">
+            <Image Source="{Binding ImagemJogador}"
+                HeightRequest="200"/>
+
+            <Image Source="{Binding ImagemOponente}"
+                HeightRequest="200"/>
+        </HorizontalStackLayout>
+
+        <Label Text="{Binding Resultado}"
+               HorizontalOptions="Center"
+                FontSize="20"/>
 
         <Picker
             Title="Selecione pedra, papel ou tesoura"
@@ -28,11 +34,26 @@
             Text="Jogar"
             Command="{Binding JogarCommand}"/>
 
-        <Label
-            Text="{Binding PontuacaoJogador}"/>
 
-        <Label
-            Text="{Binding PontuacaoOponente}"/>
+        <HorizontalStackLayout
+            HorizontalOptions="Center"
+            Spacing="50">
+            <VerticalStackLayout>
+                <Label Text="Sua pontuação"
+                       FontSize="20"/>
+                <Label Text="{Binding PontuacaoJogador}"
+                       HorizontalOptions="Center"
+                       FontSize="20"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout>
+                <Label Text="Pontuação oponente"
+                       FontSize="20"/>
+                <Label Text="{Binding PontuacaoOponente}"
+                       HorizontalOptions="Center"
+                       FontSize="20"/>
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
 
     </VerticalStackLayout>
 </ContentPage>
